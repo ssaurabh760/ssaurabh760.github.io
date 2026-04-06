@@ -282,54 +282,56 @@
             letter-spacing: -0.5px;
         }
 
-        /* Skills Grid */
-        .skills-section-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-        }
-
-        .skills-category {
+        /* Skills Section */
+        .skills-table {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 20px 22px;
-            transition: border-color 0.25s;
+            overflow: hidden;
         }
 
-        .skills-category:hover {
-            border-color: var(--border-light);
+        .skills-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            align-items: baseline;
+            padding: 18px 24px;
         }
 
-        .skills-category-label {
+        .skills-row + .skills-row {
+            border-top: 1px solid var(--border);
+        }
+
+        .skills-row-label {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 1.8px;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            padding-top: 2px;
         }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.8rem;
+        .skills-row-items {
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            background: var(--bg-secondary);
-            transition: all 0.2s;
+            line-height: 1.8;
         }
 
-        .skill-tag:hover {
-            color: var(--accent);
+        .skills-row-items span {
+            white-space: nowrap;
+        }
+
+        .skills-row-items .sep {
+            color: var(--text-muted);
+            margin: 0 4px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+                padding: 14px 20px;
+            }
         }
 
         /* Experience Cards */
@@ -604,80 +606,78 @@
                 <h2 class="section-title">Technical Skills</h2>
             </div>
 
-            <div class="skills-section-grid">
-                <div class="skills-category">
-                    <div class="skills-category-label">Languages</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C / C++</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Go</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">SQL</span>
+            <div class="skills-table">
+                <div class="skills-row">
+                    <div class="skills-row-label">Languages</div>
+                    <div class="skills-row-items">
+                        <span>Python</span><span class="sep">·</span>
+                        <span>Java</span><span class="sep">·</span>
+                        <span>C / C++</span><span class="sep">·</span>
+                        <span>C#</span><span class="sep">·</span>
+                        <span>Go</span><span class="sep">·</span>
+                        <span>JavaScript</span><span class="sep">·</span>
+                        <span>TypeScript</span><span class="sep">·</span>
+                        <span>SQL</span>
                     </div>
                 </div>
-
-                <div class="skills-category">
-                    <div class="skills-category-label">Frameworks</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">.NET</span>
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Spark</span>
+                <div class="skills-row">
+                    <div class="skills-row-label">Frameworks</div>
+                    <div class="skills-row-items">
+                        <span>FastAPI</span><span class="sep">·</span>
+                        <span>React</span><span class="sep">·</span>
+                        <span>Angular</span><span class="sep">·</span>
+                        <span>Node.js</span><span class="sep">·</span>
+                        <span>Express</span><span class="sep">·</span>
+                        <span>.NET</span><span class="sep">·</span>
+                        <span>Spring Boot</span><span class="sep">·</span>
+                        <span>TensorFlow</span><span class="sep">·</span>
+                        <span>Spark</span>
                     </div>
                 </div>
-
-                <div class="skills-category">
-                    <div class="skills-category-label">Cloud & DevOps</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">Kafka</span>
-                        <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">Grafana</span>
+                <div class="skills-row">
+                    <div class="skills-row-label">Cloud & DevOps</div>
+                    <div class="skills-row-items">
+                        <span>AWS</span><span class="sep">·</span>
+                        <span>Docker</span><span class="sep">·</span>
+                        <span>Kubernetes</span><span class="sep">·</span>
+                        <span>Terraform</span><span class="sep">·</span>
+                        <span>GitHub Actions</span><span class="sep">·</span>
+                        <span>Kafka</span><span class="sep">·</span>
+                        <span>Azure</span><span class="sep">·</span>
+                        <span>Grafana</span><span class="sep">·</span>
+                        <span>Linux</span>
                     </div>
                 </div>
-
-                <div class="skills-category">
-                    <div class="skills-category-label">Databases</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Elasticsearch</span>
+                <div class="skills-row">
+                    <div class="skills-row-label">Databases</div>
+                    <div class="skills-row-items">
+                        <span>PostgreSQL</span><span class="sep">·</span>
+                        <span>MongoDB</span><span class="sep">·</span>
+                        <span>MySQL</span><span class="sep">·</span>
+                        <span>Redis</span><span class="sep">·</span>
+                        <span>Elasticsearch</span>
                     </div>
                 </div>
-
-                <div class="skills-category">
-                    <div class="skills-category-label">Protocols & Auth</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">REST</span>
-                        <span class="skill-tag">gRPC</span>
-                        <span class="skill-tag">WebSockets</span>
-                        <span class="skill-tag">JWT</span>
-                        <span class="skill-tag">OAuth2</span>
+                <div class="skills-row">
+                    <div class="skills-row-label">Protocols</div>
+                    <div class="skills-row-items">
+                        <span>REST</span><span class="sep">·</span>
+                        <span>gRPC</span><span class="sep">·</span>
+                        <span>WebSockets</span><span class="sep">·</span>
+                        <span>TCP/IP</span><span class="sep">·</span>
+                        <span>JWT</span><span class="sep">·</span>
+                        <span>OAuth2</span>
                     </div>
                 </div>
-
-                <div class="skills-category">
-                    <div class="skills-category-label">Architecture</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Distributed Systems</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">Concurrency</span>
-                        <span class="skill-tag">Low-Latency</span>
-                        <span class="skill-tag">TDD</span>
+                <div class="skills-row">
+                    <div class="skills-row-label">Architecture</div>
+                    <div class="skills-row-items">
+                        <span>Distributed Systems</span><span class="sep">·</span>
+                        <span>Microservices</span><span class="sep">·</span>
+                        <span>Concurrency</span><span class="sep">·</span>
+                        <span>Low-Latency Design</span><span class="sep">·</span>
+                        <span>TDD</span><span class="sep">·</span>
+                        <span>Agile</span>
                     </div>
                 </div>
             </div>
