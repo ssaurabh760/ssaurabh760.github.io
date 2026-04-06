@@ -283,39 +283,52 @@
         }
 
         /* Skills Grid */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 24px;
+        .skills-section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
         }
 
         .skills-category {
-            margin-bottom: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 22px;
+            transition: border-color 0.25s;
+        }
+
+        .skills-category:hover {
+            border-color: var(--border-light);
         }
 
         .skills-category-label {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.78rem;
-            color: var(--text-muted);
+            font-size: 0.72rem;
+            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
+            letter-spacing: 1.8px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .skill-tag {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 5px 12px;
+            border-radius: 4px;
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
+            background: var(--bg-secondary);
             transition: all 0.2s;
         }
 
         .skill-tag:hover {
-            border-color: var(--accent);
             color: var(--accent);
         }
 
@@ -591,80 +604,81 @@
                 <h2 class="section-title">Technical Skills</h2>
             </div>
 
-            <div class="skills-category">
-                <div class="skills-category-label">Languages</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">Go</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">SQL</span>
+            <div class="skills-section-grid">
+                <div class="skills-category">
+                    <div class="skills-category-label">Languages</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C / C++</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <div class="skills-category-label">Frameworks & Libraries</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Angular</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Express.js</span>
-                    <span class="skill-tag">.NET</span>
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">Pytest</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Spark</span>
-                    <span class="skill-tag">Streamlit</span>
+                <div class="skills-category">
+                    <div class="skills-category-label">Frameworks</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">.NET</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Spark</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <div class="skills-category-label">Cloud & DevOps</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">AWS (EC2, S3, RDS, Lambda)</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Kubernetes</span>
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">CI/CD</span>
-                    <span class="skill-tag">GitHub Actions</span>
-                    <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Grafana</span>
-                    <span class="skill-tag">Linux/Ubuntu</span>
+                <div class="skills-category">
+                    <div class="skills-category-label">Cloud & DevOps</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <div class="skills-category-label">Data & Protocols</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">Elasticsearch</span>
-                    <span class="skill-tag">REST APIs</span>
-                    <span class="skill-tag">gRPC</span>
-                    <span class="skill-tag">WebSockets</span>
-                    <span class="skill-tag">JWT</span>
-                    <span class="skill-tag">OAuth2</span>
-                    <span class="skill-tag">Git</span>
+                <div class="skills-category">
+                    <div class="skills-category-label">Databases</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <div class="skills-category-label">Architecture & Practices</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">Distributed Systems</span>
-                    <span class="skill-tag">Microservices</span>
-                    <span class="skill-tag">Multithreading/Concurrency</span>
-                    <span class="skill-tag">Low-Latency Design</span>
-                    <span class="skill-tag">TDD</span>
-                    <span class="skill-tag">Agile</span>
+                <div class="skills-category">
+                    <div class="skills-category-label">Protocols & Auth</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">REST</span>
+                        <span class="skill-tag">gRPC</span>
+                        <span class="skill-tag">WebSockets</span>
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">OAuth2</span>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <div class="skills-category-label">Architecture</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Distributed Systems</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Concurrency</span>
+                        <span class="skill-tag">Low-Latency</span>
+                        <span class="skill-tag">TDD</span>
+                    </div>
                 </div>
             </div>
         </div>
